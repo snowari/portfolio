@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap");
+@font-face {
+  font-family: "PP NeueBit";
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/PPNeueBit-Bold.otf") format("opentype");
+}
+@import "tailwindcss";
+
+@theme {
+  --font-neuebit: "PP NeueBit", sans-serif;
+  --font-sofia: "Sofia Sans", sans-serif;
+
+  --color-white: #f7f7f7;
+  --color-black: #101010;
+
+  --animate-scanline-move: scanline-move 1s linear infinite;
+
+  @keyframes scanline-move {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 12px;
+    }
+  }
+}
