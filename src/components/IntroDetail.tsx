@@ -1,16 +1,11 @@
 import profileImg from "../assets/img/profile.jpg";
 
-const IntroWrapper = () => {
+const IntroDetail = () => {
   return (
-    <div className=" w-full font-sofia flex flex-col mx-auto justify-center px-20 mt-[-240px]">
-      <h1 className="font-black text-[12rem] w-full justify-center">
+    <div className=" w-full font-sofia flex flex-col mx-auto px-20">
+      <h1 className="font-black text-[10vw] w-full justify-center leading-none">
         EUNSEOPORTFOLIO
       </h1>
-      {/* <div className="flex gap-3 text-2xl font-semibold justify-end">
-        <span>FRONT</span>
-        <span>END</span>
-        <span>DEVELOPER</span>
-      </div> */}
       <div className="flex justify-center">
         <div className="flex items-end justify-center gap-10">
           <div className="flex flex-col text-2xl">
@@ -32,4 +27,4 @@ const IntroWrapper = () => {
   );
 };
 
-export default IntroWrapper;
+export default IntroDetail;
