@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import randomChar from "../utils/randomChar";
 
-interface AlienTextEffectProps {
+interface AlienTextProps {
   text: string;
+  className?: string;
+  onMouseEnter?: () => void;
 }
 
-export default function AlienTextEffect({ text }: AlienTextEffectProps) {
+const AlienText = ({ text, className, onMouseEnter }: AlienTextProps) => {
   const [displayText, setDisplayText] = useState(text);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -39,13 +41,17 @@ export default function AlienTextEffect({ text }: AlienTextEffectProps) {
   }, [isAnimating, text]);
 
   return (
-    <li
-      className="font-neuebit cursor-pointer text-[var(--color-black)] text-[2.5rem] transition-colors duration-200 min-w-[180px] relative text-right"
+    <span
+      className={className}
       onMouseEnter={() => {
-        if (!isAnimating) setIsAnimating(true);
+        if (!isAnimating) {
+          setIsAnimating(true);
+          onMouseEnter?.();
+        }
       }}
     >
       {displayText}
-    </li>
+    </span>
   );
-}
+};
+export default AlienText;
